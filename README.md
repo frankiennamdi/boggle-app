@@ -7,6 +7,12 @@
 https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.0-Release-Notes#third-party-library-upgrades
 
 
+# Dictionary
+
+The sample dictionary contains the following words
+
+"GEEKS", "FOR", "QUIZ", "GO"
+
 # Development and Execution
 
 This section describes the development and execution environment and steps.  
@@ -21,6 +27,12 @@ mvn clean install
 
 ```
 mvn clean install -DskipITs=false
+```
+
+## Run Standalone
+
+```
+mvn install spring-boot:run
 ```
 
 ## Deploy to Tomcat
@@ -41,11 +53,6 @@ cp atm-locator.war [TOMCAT_WEBAPP]/atm-locator.war
 [TOMCAT_INSTALLATION_ROOT_DIR]/bin/shutdown.sh
 ```
 
-## Run Standalone 
-
-```
-mvn install spring-boot:run
-```
 
 # Services and Example
 
