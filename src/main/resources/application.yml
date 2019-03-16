@@ -1,0 +1,10 @@
+spring:
+
+logging:
+    level:
+      .: INFO
+      org.springframework.web: INFO
+
+server:
+  servlet:
+    context-path: /boggle
