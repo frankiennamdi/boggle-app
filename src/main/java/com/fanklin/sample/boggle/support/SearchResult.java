@@ -2,13 +2,20 @@ package com.fanklin.sample.boggle.support;
 
 public class SearchResult {
 
-  private boolean isPrefix;
+  private final boolean isPrefix;
 
-  private boolean isWord;
+  private final boolean isWord;
 
-  public SearchResult(boolean isPrefix, boolean isWord) {
+  private final String searchString;
+
+  public SearchResult(String searchString, boolean isPrefix, boolean isWord) {
     this.isPrefix = isPrefix;
     this.isWord = isWord;
+    this.searchString = searchString;
+  }
+
+  public String getSearchString() {
+    return searchString;
   }
 
   public boolean isPrefix() {

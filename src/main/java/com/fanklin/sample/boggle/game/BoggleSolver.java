@@ -2,14 +2,13 @@ package com.fanklin.sample.boggle.game;
 
 import com.fanklin.sample.boggle.support.Dictionary;
 import com.fanklin.sample.boggle.support.SearchResult;
+import com.google.common.base.Stopwatch;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import org.apache.commons.lang3.tuple.Pair;
-import com.google.common.base.Stopwatch;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 
 import java.util.List;
 import java.util.Set;
@@ -83,7 +82,7 @@ public class BoggleSolver {
         currentString.append(currentChar);
         SearchResult searchResult = dictionary.findWord(currentString.toString());
         if (searchResult.isWord()) {
-          foundWords.add(currentString.toString());
+          foundWords.add(searchResult.getSearchString());
         }
         if (searchResult.isPrefix()) {
           foundWords.addAll(findWords(board, currentString, nextY, nextX, usedCells));
@@ -103,6 +102,6 @@ public class BoggleSolver {
     if (dictionary.characterSet().contains(character)) {
       return character;
     }
-    throw new RuntimeException("Board Contains Illegal Characters for the dictionary");
+    throw new RuntimeException(String.format("Board Contains Illegal Characters for the dictionary [%c]", character));
   }
 }

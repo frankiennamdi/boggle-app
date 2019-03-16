@@ -33,7 +33,7 @@ public class Trie {
 
   public SearchResult search(String word) {
     TrieNode trieNode = find(word);
-    return new SearchResult((trieNode != null) && trieNode.hasChildren(),
+    return new SearchResult(word,(trieNode != null) && trieNode.hasChildren(),
             (trieNode != null) && trieNode.isEndOfWord());
   }
 }
