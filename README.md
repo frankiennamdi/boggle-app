@@ -26,13 +26,13 @@ mvn clean install
 ## Build and Run Integration Test
 
 ```
-mvn clean install -DskipITs=false
+./mvnw clean install -DskipITs=false
 ```
 
 ## Run Standalone
 
 ```
-mvn clean install spring-boot:run
+./mvnw clean install spring-boot:run
 ```
 
 ## Deploy to Tomcat
