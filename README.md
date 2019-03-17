@@ -1,9 +1,8 @@
 # Required Technologies
 1. mvn
-2. Java 8.x - chosen for some of its appealing functionality like streams, functions and method references. 
-3. Tomcat 8.x - because of the java 8 above.
-4. Developed with IDEA Intellij - chosen as my IDE of choice. 
-5. Spring Boot 2.0.3 - Please see requirements for this version of Spring Boot 
+2. Java 8.x - chosen for some of its appealing functionality like streams, functions and method references.
+3. Developed with IDEA Intellij - chosen as my IDE of choice.
+4. Spring Boot 2.0.3 - Please see requirements for this version of Spring Boot
 https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.0-Release-Notes#third-party-library-upgrades
 
 
@@ -20,39 +19,20 @@ This section describes the development and execution environment and steps.
 ## Build and Run Unit Test
 
 ```
-mvn clean install
+mvn clean package
 ```
 
-## Build and Run Integration Test
+## Build and Run Test
 
 ```
-./mvnw clean install -DskipITs=false
+./mvnw clean package
 ```
 
-## Run Standalone
+## Run Service
 
 ```
-./mvnw clean install spring-boot:run
+./mvnw clean package && java -jar target/boggle-app-0.0.1-SNAPSHOT.jar
 ```
-
-## Deploy to Tomcat
-
-```
-cp boggle-app.war [TOMCAT_WEBAPP]/boggle-app.war
-```
-
-## Start Tomcat
-
-```
-[TOMCAT_INSTALLATION_ROOT_DIR]/bin/startup.sh
-```
-
-## Stop Tomcat
-
-```
-[TOMCAT_INSTALLATION_ROOT_DIR]/bin/shutdown.sh
-```
-
 
 # Services and Example
 
