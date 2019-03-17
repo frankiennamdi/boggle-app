@@ -13,9 +13,8 @@ public class SampleDictionary implements Dictionary {
   public SampleDictionary(List<String> words) {
     dictionary = new Trie();
     words.forEach(dictionary::insert);
-    AlphabetSupport alphabetSupport = new AlphabetSupport();
-    characterSet = String.valueOf(alphabetSupport.getAlphabet(true))
-            .chars().mapToObj(e -> (char) e).collect(Collectors.toSet());
+    char[] englishChars = AlphabetSupport.englishAlphabet().getAlphabet(true);
+    characterSet = String.valueOf(englishChars).chars().mapToObj(e -> (char) e).collect(Collectors.toSet());
   }
 
   @Override

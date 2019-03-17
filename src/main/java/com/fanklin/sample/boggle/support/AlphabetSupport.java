@@ -2,7 +2,7 @@ package com.fanklin.sample.boggle.support;
 
 import java.util.Locale;
 
-class AlphabetSupport {
+public class AlphabetSupport {
 
   private final Locale locale;
 
@@ -10,13 +10,13 @@ class AlphabetSupport {
     this.locale = locale;
   }
 
-  AlphabetSupport() {
-    this(Locale.ENGLISH);
+  public static AlphabetSupport englishAlphabet() {
+    return new AlphabetSupport(Locale.ENGLISH);
   }
 
-  char[] getAlphabet(boolean flagToUpperCase) {
+  char[] getAlphabet(boolean upperCase) {
     LocaleLanguage language = LocaleLanguage.getLocalLanguage(locale);
-    return getAlphabet(language, flagToUpperCase);
+    return getAlphabet(language, upperCase);
   }
 
   private char[] getAlphabet(LocaleLanguage localeLanguage, boolean flagToUpperCase) {
@@ -63,14 +63,6 @@ class AlphabetSupport {
 
     public char getLastLetter() {
       return mLastLetter;
-    }
-
-    public String getDisplayLanguage() {
-      return getLocale().getDisplayLanguage();
-    }
-
-    public String getDisplayLanguage(LocaleLanguage locale) {
-      return getLocale().getDisplayLanguage(locale.getLocale());
     }
 
     public static LocaleLanguage getLocalLanguage(Locale locale) {
