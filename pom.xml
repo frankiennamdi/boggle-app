@@ -8,8 +8,8 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
 
-  <name>atm-locator</name>
-  <description>Atm Locator</description>
+  <name>boggle-app</name>
+  <description>boggle application</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

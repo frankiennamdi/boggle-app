@@ -32,13 +32,13 @@ mvn clean install -DskipITs=false
 ## Run Standalone
 
 ```
-mvn install spring-boot:run
+mvn clean install spring-boot:run
 ```
 
 ## Deploy to Tomcat
 
 ```
-cp atm-locator.war [TOMCAT_WEBAPP]/atm-locator.war
+cp boggle-app.war [TOMCAT_WEBAPP]/boggle-app.war
 ```
 
 ## Start Tomcat
