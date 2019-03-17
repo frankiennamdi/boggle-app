@@ -1,5 +1,7 @@
 package com.fanklin.sample.boggle.game;
 
+import com.fanklin.sample.boggle.model.BoggleBoard;
+import com.fanklin.sample.boggle.model.BoggleResult;
 import com.fanklin.sample.boggle.support.Dictionary;
 import com.fanklin.sample.boggle.support.SearchResult;
 import com.google.common.base.Stopwatch;
@@ -13,9 +15,9 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 import java.util.Set;
 
-public class BoggleSolver {
+public class Boggle {
 
-  private static final Logger logger = LoggerFactory.getLogger(BoggleSolver.class);
+  private static final Logger logger = LoggerFactory.getLogger(Boggle.class);
 
   private static final List<Pair<Integer, Integer>> CELL_NEIGHBOURS
           = ImmutableList.of(
@@ -31,7 +33,7 @@ public class BoggleSolver {
 
   private final Dictionary dictionary;
 
-  public BoggleSolver(Dictionary dictionary) {
+  public Boggle(Dictionary dictionary) {
     this.dictionary = dictionary;
   }
 
@@ -39,8 +41,9 @@ public class BoggleSolver {
     return Pair.of(y, x);
   }
 
-  public List<String> solve(char[][] board) {
+  public BoggleResult solve(BoggleBoard boggleBoard) {
     Stopwatch stopWatch = Stopwatch.createStarted();
+    char[][] board = boggleBoard.toCharArray();
     try {
       List<String> results = Lists.newArrayList();
       Set<Pair<Integer, Integer>> usedCells = Sets.newHashSet();
@@ -64,7 +67,9 @@ public class BoggleSolver {
           results.addAll(findWords(board, new StringBuilder(String.valueOf(currentChar)), i, j, usedCells));
         }
       }
-      return results;
+      BoggleResult boggleResult = new BoggleResult();
+      boggleResult.setWordsInBoard(results);
+      return boggleResult;
     } finally {
       logger.info("time: {}", stopWatch);
     }

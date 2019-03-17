@@ -19,7 +19,7 @@ This section describes the development and execution environment and steps.
 ## Build and Run Unit Test
 
 ```
-mvn clean package
+./mvnw clean package
 ```
 
 ## Build and Run Test
