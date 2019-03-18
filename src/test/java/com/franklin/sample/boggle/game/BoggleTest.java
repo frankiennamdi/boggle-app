@@ -26,9 +26,7 @@ public class BoggleTest {
             {'U', 'E', 'K'},
             {'Q', 'S', 'E'}};
 
-    Dictionary sampleDictionary = new SampleDictionary(ImmutableList.of(
-            "GEEKS", "FOR", "QUIZ", "GO"
-    ));
+    Dictionary sampleDictionary = new SampleDictionary(ImmutableList.of("GEEKS", "FOR", "QUIZ", "GO"));
 
     List<String> boardSolution = ImmutableList.of("GEEKS", "QUIZ");
     Boggle boggle = new Boggle(sampleDictionary);
@@ -46,8 +44,7 @@ public class BoggleTest {
             {'O', 'N', 'A', 'T'},
             {'R', 'F', 'R', 'M'}};
 
-    List<String> boardSolution = ImmutableList.of(
-            "EAUS", "ELS", "ELT", "ELUANTS", "ETA", "ELTS");
+    List<String> boardSolution = ImmutableList.of("EAUS", "ELS", "ELT", "ELUANTS", "ETA", "ELTS");
 
     Dictionary sampleDictionary = new SampleDictionary(boardSolution);
 
@@ -63,9 +60,7 @@ public class BoggleTest {
             {'U', 'E'},
             {'Q', 'S', 'E'}};
 
-    Dictionary sampleDictionary = new SampleDictionary(ImmutableList.of(
-            "GEEKS", "FOR", "QUIZ", "GO"
-    ));
+    Dictionary sampleDictionary = new SampleDictionary(ImmutableList.of("GEEKS", "FOR", "QUIZ", "GO"));
 
     try {
       Boggle boggle = new Boggle(sampleDictionary);
