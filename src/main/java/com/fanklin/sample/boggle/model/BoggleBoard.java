@@ -20,7 +20,8 @@ public class BoggleBoard {
   }
 
   public char[][] toCharArray() {
-    List<char[]> temp = board.stream().map(list -> Joiner.on("").join(list)).map(String::toCharArray).collect(Collectors.toList());
+    List<char[]> temp = board.stream().map(list -> Joiner.on("").join(list))
+            .map(String::toCharArray).collect(Collectors.toList());
 
     char[][] conversion = new char[temp.size()][];
     for (int i = 0; i < temp.size(); i++) {
