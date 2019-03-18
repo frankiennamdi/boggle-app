@@ -7,7 +7,6 @@ import com.fanklin.sample.boggle.support.Dictionary;
 import com.fanklin.sample.boggle.support.SampleDictionary;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
-import org.assertj.core.util.Lists;
 import org.junit.Test;
 
 import java.util.List;
@@ -31,10 +30,11 @@ public class BoggleTest {
             "GEEKS", "FOR", "QUIZ", "GO"
     ));
 
+    List<String> boardSolution = ImmutableList.of("GEEKS", "QUIZ");
     Boggle boggle = new Boggle(sampleDictionary);
     BoggleResult result = boggle.solve(BoggleBoard.newBoggleBoard(board));
     assertThat(result.getWordsInBoard().size(), is(2));
-    assertThat(result.getWordsInBoard(), everyItem(isIn(Lists.newArrayList("GEEKS", "QUIZ"))));
+    assertThat(result.getWordsInBoard(), everyItem(isIn(boardSolution)));
   }
 
   @Test
@@ -54,6 +54,7 @@ public class BoggleTest {
     Boggle boggle = new Boggle(sampleDictionary);
     BoggleResult result = boggle.solve(BoggleBoard.newBoggleBoard(board));
     assertThat(result.getWordsInBoard().size(), is(boardSolution.size()));
+    assertThat(result.getWordsInBoard(), everyItem(isIn(boardSolution)));
   }
 
   @Test
